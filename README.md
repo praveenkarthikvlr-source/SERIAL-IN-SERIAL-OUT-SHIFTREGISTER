@@ -24,19 +24,43 @@ The synchronous nature of the flip-flops ensures that the shifting of data occur
 Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and an output (Q). The D input represents the data to be loaded into the flip-flop, while the CLK input is connected to the common clock signal. The output (Q) of each flip-flop is connected to the D input of the next flip-flop, forming a cascade.
 
 **Procedure**
-
-/* write all the steps invloved */
+Open Quartus and create a new Verilog file.
+Copy and paste the corrected code and save the file.
+Compile the program to check for errors.
+Generate the RTL schematic and timing diagram.
+Simulate the design to verify the serial shift operation.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+```
+/* write all the steps invloved */
+Developed by: PRAVEEN KUMAR K
+RegisterNumber: 212225230216
 
-Developed by: RegisterNumber:
+module exp10(clk, sin, q);
+    input clk;
+    input sin;
+    output [3:0] q;
+    reg [3:0] q;
 
-*/
+    always @(posedge clk) begin
+        q[0] <= sin;
+        q[1] <= q[0];
+        q[2] <= q[1];
+        q[3] <= q[2];  
+    end
+endmodule
+```
 
 **RTL LOGIC FOR SISO Shift Register**
 
+<img width="1216" height="582" alt="image" src="https://github.com/user-attachments/assets/bf29bf34-dac6-4899-97d6-8012c7674eed" />
+
+
 **TIMING DIGRAMS FOR SISO Shift Register**
 
+<img width="1921" height="1201" alt="image" src="https://github.com/user-attachments/assets/1942adda-fe91-4163-b66f-945032f4d8c4" />
+
 **RESULTS**
+
+Thus the Serial-In Serial-Out shift register is implemented and verified.
